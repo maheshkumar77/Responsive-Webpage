@@ -1,0 +1,146 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100%; /* Ensure body covers full height */
+    margin: 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 20px;
+}
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar-brand {
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+}
+.menu-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 30px;
+    display: none;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px; /* To avoid overlap with fixed navbar */
+    height: calc(100vh - 80px); /* Ensure full height of the viewport */
+}
+
+/* Left Menu */
+.left-menu {
+    background-color: #333;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    height: 100%; /* Ensure left menu covers full height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: width 0.3s ease;
+}
+.left-menu ul {
+    list-style: none;
+    padding: 0;
+}
+.left-menu li {
+    margin-bottom: 10px;
+}
+.left-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+    height: 100%;
+    overflow-y: auto; /* Handle overflow if content is long */
+}
+
+/* Right Panel */
+.right-panel {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    margin-left: 10px;
+    height: 100%;
+    overflow-y: auto; /* Handle overflow if content is long */
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .left-menu {
+        width: 100%;
+        display: none; /* Hide left menu initially on smaller screens */
+    }
+    .main-content, .right-panel {
+        width: 100%;
+    }
+    .menu-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 767px) {
+    .left-menu {
+        display: block;
+    }
+}
+
+/* Shrinking the page */
+.shrink-90 {
+    transform: scale(0.9);
+}
+
+.shrink-80 {
+    transform: scale(0.8);
+}
+
+.shrink-75 {
+    transform: scale(0.75);
+}
+
+.shrink-50 {
+    transform: scale(0.5);
+}
